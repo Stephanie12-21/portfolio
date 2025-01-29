@@ -136,10 +136,10 @@ const skills = [
 const projects = [
   {
     id: 1,
-    title: "Application de gestion de rendez-vous",
+    title: "Application de gestion d'une école",
     description: "Un site web personnel présentant mes compétences et projets.",
-    image: "/placeholder.svg?height=200&width=300",
-    link: "/projects/portfolio",
+    image: "/academy.png",
+    link: "/#",
   },
   {
     id: 2,
@@ -150,7 +150,7 @@ const projects = [
       width: 200,
       height: 200,
     },
-    link: "/projects/task-manager",
+    link: "/#",
   },
   {
     id: 3,
