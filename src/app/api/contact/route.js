@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-async function sendMessageContact(nom, prenom, email, phone, objet, message) {
+async function sendMessageContact(nom, email, phone, objet, message) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
@@ -65,7 +65,7 @@ async function sendMessageContact(nom, prenom, email, phone, objet, message) {
       <p style=" font-size: 16px; margin-bottom: 20px;">
         Vous avez reçu un nouveau message de la part de 
         <strong style="color: #ec4899;">
-          ${prenom} ${nom}
+           ${nom}
         </strong>
       </p>
 
@@ -135,20 +135,7 @@ async function sendMessageContact(nom, prenom, email, phone, objet, message) {
           </td>
           <td style=" padding: 8px; border-bottom: 1px solid #e2e8f0;">${nom}</td>
         </tr>
-        <tr>
-          <td
-            style="
-              padding: 8px;
-              border-bottom: 1px solid #e2e8f0;
-              font-weight: bold;
-            "
-          >
-            Prénom :
-          </td>
-          <td style=" padding: 8px; border-bottom: 1px solid #e2e8f0;">
-            ${prenom}
-          </td>
-        </tr>
+        
         <tr>
           <td
             style="
@@ -197,9 +184,9 @@ async function sendMessageContact(nom, prenom, email, phone, objet, message) {
 }
 
 export async function POST(req) {
-  const { nom, prenom, email, phone, objet, message } = await req.json();
+  const { nom, email, phone, objet, message } = await req.json();
 
-  if (!nom || !prenom || !email || !phone || !objet || !message) {
+  if (!nom || !email || !phone || !objet || !message) {
     return NextResponse.json(
       { error: "Tous les champs sont requis." },
       { status: 400 }
@@ -207,7 +194,7 @@ export async function POST(req) {
   }
 
   try {
-    await sendMessageContact(nom, prenom, email, phone, objet, message);
+    await sendMessageContact(nom, email, phone, objet, message);
     return NextResponse.json(
       { message: "Message envoyé à l'administrateur avec succès" },
       { status: 200 }
