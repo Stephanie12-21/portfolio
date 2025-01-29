@@ -136,15 +136,17 @@ const skills = [
 const projects = [
   {
     id: 1,
-    title: "Application de gestion d'une école",
-    description: "Un site web personnel présentant mes compétences et projets.",
+    title: "My Academy",
+    description:
+      "L'application vise à permettre aux administrateurs, enseignants, parents et élèves d’accéder aux informations scolaires de manière centralisée. (En cours de réalisation)",
     image: "/academy.png",
     link: "/#",
   },
   {
     id: 2,
     title: "VetCare+",
-    description: "Une plateforme pour facilter les soins vétérinaires.",
+    description:
+      "Une plateforme dédiée à l'amélioration des soins vétérinaires en facilitant l'accès aux professionnels de santé animale. (En cours de réalisation)",
     image: {
       src: "/pet.png",
       width: 200,
@@ -155,9 +157,26 @@ const projects = [
   {
     id: 3,
     title: "Adventures",
-    description: "Un site web pour une agence (fictive) de voyage.",
+    description:
+      "Un site web conçu pour une agence de voyage fictive, offrant des expériences uniques aux aventuriers du monde entier.",
     image: "/logo.png",
     link: "https://our-adventures.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "Check-in App",
+    description:
+      "Solution idéale pour les salons de coiffure, cabinets médicaux, coachs et autres professionnels. Permet la prise de rendez-vous en ligne avec rappels automatiques et un suivi complet des interactions clients (En cours de réalisation)",
+    image: "/check-in.svg",
+    link: "/#",
+  },
+  {
+    id: 5,
+    title: "Lilee Demo App",
+    description:
+      "Plateforme de publications de petites annonces pour les particuliers et les professionnels. (projet perso)",
+    image: "/check-in.svg",
+    link: "/#",
   },
 ];
 
