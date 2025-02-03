@@ -794,7 +794,7 @@ export default function Home() {
           </section>
 
           <div className=" text-center text-gray-600 py-8 ">
-            &copy; Copyright {currentYear} Adventures | Conçu par{" "}
+            &copy; Copyright {currentYear} | Conçu par{" "}
             <Link
               href="https://stephanie-maminiaina.vercel.app/"
               className="text-[#dd5bb9] hover:text-[#dd5bb9] hover:underline"
