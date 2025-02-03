@@ -134,48 +134,48 @@ const skills = [
 ];
 
 const projects = [
+  // {
+  //   id: 1,
+  //   title: "My Academy",
+  //   description:
+  //     "L'application vise à permettre aux administrateurs, enseignants, parents et élèves d’accéder aux informations scolaires de manière centralisée. (En cours de réalisation)",
+  //   image: "/academy.png",
+  //   link: "/#",
+  // },
+  // {
+  //   id: 2,
+  //   title: "VetCare+",
+  //   description:
+  //     "Une plateforme dédiée à l'amélioration des soins vétérinaires en facilitant l'accès aux professionnels de santé animale. (En cours de réalisation)",
+  //   image: {
+  //     src: "/pet.png",
+  //     width: 200,
+  //     height: 200,
+  //   },
+  //   link: "/#",
+  // },
   {
     id: 1,
-    title: "My Academy",
-    description:
-      "L'application vise à permettre aux administrateurs, enseignants, parents et élèves d’accéder aux informations scolaires de manière centralisée. (En cours de réalisation)",
-    image: "/academy.png",
-    link: "/#",
-  },
-  {
-    id: 2,
-    title: "VetCare+",
-    description:
-      "Une plateforme dédiée à l'amélioration des soins vétérinaires en facilitant l'accès aux professionnels de santé animale. (En cours de réalisation)",
-    image: {
-      src: "/pet.png",
-      width: 200,
-      height: 200,
-    },
-    link: "/#",
-  },
-  {
-    id: 3,
     title: "Adventures",
     description:
       "Un site web conçu pour une agence de voyage fictive, offrant des expériences uniques aux aventuriers du monde entier.",
     image: "/logo.png",
     link: "https://our-adventures.vercel.app/",
   },
+  // {
+  //   id: 4,
+  //   title: "Check-in App",
+  //   description:
+  //     "Solution idéale pour les salons de coiffure, cabinets médicaux, coachs et autres professionnels. Permet la prise de rendez-vous en ligne avec rappels automatiques et un suivi complet des interactions clients (En cours de réalisation)",
+  //   image: "/check-in.png",
+  //   link: "/#",
+  // },
   {
-    id: 4,
-    title: "Check-in App",
-    description:
-      "Solution idéale pour les salons de coiffure, cabinets médicaux, coachs et autres professionnels. Permet la prise de rendez-vous en ligne avec rappels automatiques et un suivi complet des interactions clients (En cours de réalisation)",
-    image: "/check-in.svg",
-    link: "/#",
-  },
-  {
-    id: 5,
+    id: 2,
     title: "Lilee Demo App",
     description:
       "Plateforme de publications de petites annonces pour les particuliers et les professionnels. (projet perso)",
-    image: "/check-in.svg",
+    image: "/logoLilee.jpg",
     link: "/#",
   },
 ];
@@ -301,6 +301,10 @@ export default function Home() {
   const [error, setError] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+
+  const handleseeProject = () => {
+    router.push("https://github.com/Stephanie12-21");
+  };
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -544,6 +548,14 @@ export default function Home() {
                     isVisible={index < visibleProjects}
                   />
                 ))}
+              </div>
+              <div className="flex justify-center mt-8">
+                <Button
+                  onClick={handleseeProject}
+                  className="w-full lg:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white text-base"
+                >
+                  Voir plus de projects
+                </Button>
               </div>
             </div>
           </section>
