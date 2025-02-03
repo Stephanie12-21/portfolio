@@ -301,6 +301,7 @@ export default function Home() {
   const [error, setError] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   const handleseeProject = () => {
     router.push("https://github.com/Stephanie12-21");
@@ -791,6 +792,16 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          <div className=" text-center text-gray-600 py-8 ">
+            &copy; Copyright {currentYear} Adventures | Conçu par{" "}
+            <Link
+              href="https://stephanie-maminiaina.vercel.app/"
+              className="text-[#dd5bb9] hover:text-[#dd5bb9] hover:underline"
+            >
+              Stéphanie MAMINIAINA
+            </Link>{" "}
+          </div>
         </main>
       </div>
       <SuccessModal
