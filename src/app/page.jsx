@@ -612,10 +612,10 @@ export default function Home() {
                                 <SiWhatsapp className="w-5 h-5 text-pink-500" />
                               </div>
                               <a
-                                href="https://wa.me/+261381182627"
+                                href="https://wa.me/+261383638794"
                                 className="text-gray-600"
                               >
-                                +261 38 11 826 27
+                                +261 38 36 387 94
                               </a>
                             </div>
                             <div className="flex items-center gap-4">
