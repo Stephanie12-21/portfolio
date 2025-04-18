@@ -170,14 +170,14 @@ const projects = [
   //   image: "/check-in.png",
   //   link: "/#",
   // },
-  // {
-  //   id: 2,
-  //   title: "Lilee Demo App",
-  //   description:
-  //     "Plateforme de publications de petites annonces pour les particuliers et les professionnels. (projet perso)",
-  //   image: "/logoLilee.jpg",
-  //   link: "/#",
-  // },
+  {
+    id: 2,
+    title: "Refonte non officielle de GLLIB",
+    description:
+      "Ceci est la refonte non-officielle du site web https://www.glib.fr/.",
+    image: "/logo-glib.svg",
+    link: "https://glib-refonte.vercel.app/",
+  },
 ];
 
 const sections = [
