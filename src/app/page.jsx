@@ -172,11 +172,10 @@ const projects = [
   // },
   {
     id: 2,
-    title: "Refonte non officielle de GLLIB",
-    description:
-      "Ceci est la refonte non-officielle du site web https://www.glib.fr/.",
-    image: "/logo-glib.svg",
-    link: "https://glib-refonte.vercel.app/",
+    title: "Site portfolio de Kleernet Infini",
+    description: "Ceci est le site web de Kleernet Infini",
+    image: "/logokI.png",
+    link: "https://kleernetinfini-project.vercel.app/fr",
   },
 ];
 
@@ -612,10 +611,10 @@ export default function Home() {
                                 <SiWhatsapp className="w-5 h-5 text-pink-500" />
                               </div>
                               <a
-                                href="https://wa.me/+261383638794"
+                                href="https://wa.me/+261381182627"
                                 className="text-gray-600"
                               >
-                                +261 38 36 387 94
+                                +261 38 11 826 27
                               </a>
                             </div>
                             <div className="flex items-center gap-4">
