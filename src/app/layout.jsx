@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Work_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const jersey = Work_Sans({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${jersey.variable} font-jersey antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
