@@ -21,12 +21,17 @@ import { SiWhatsapp } from "react-icons/si";
 import {
   BrainCircuit,
   CalendarIcon,
+  ChevronLeft,
+  ChevronRight,
   FacebookIcon,
   GithubIcon,
   GraduationCap,
   LinkedinIcon,
   Mail,
   MapPin,
+  MegaphoneIcon,
+  Quote,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -35,156 +40,13 @@ import { ErrorModal } from "./(modal)/contact/ErrorModal";
 import { Marquee } from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-
-const etapesEducatives = [
-  {
-    titre: "Baccalauréat Scientifique, série C",
-    description: "Mon diplôme de fin d'études scolaires avec la mention Bien.",
-    annees: "2020 - 2021",
-  },
-  {
-    titre: "Première année de licence en Math-Info",
-    description:
-      "J'ai passé une année à étudier les mathématiques appliquées à l'informatique à l'université de Barikadimy, à Tamatave",
-    annees: "2021 - 2022",
-  },
-  {
-    titre: "Première année de licence professionnelle à l'ENI",
-    description:
-      "Après avoir passer le concours d'entrée, j'ai pu intégrer les rangs des permières années à l'Ecole Nation d'Informatique à Tuléar, en suivant la mention IG.",
-    annees: "2022 - 2023",
-  },
-  {
-    titre: "Deuxième année de licence professionnelle à l'ENI",
-    description:
-      "En vue de poursuivre mes études en informatique, je continue mon aventure enrichissante avec l'ENI.",
-    annees: "2023 - 2024",
-  },
-  {
-    titre: "Troisième année de licence professionnelle à l'ENI",
-    description:
-      "Dans le but d'obtenir ma licence professionnelle en informatique.",
-    annees: "Présent",
-  },
-];
-
-const skills = [
-  {
-    name: "React",
-    level: "Intermédiaire",
-    description:
-      "Bibliothèque JavaScript pour la création d'interfaces utilisateur dynamiques.",
-    img: "/REACT.svg",
-  },
-  {
-    name: "Next.js",
-    level: "Intermédiaire",
-    description:
-      "Framework React pour le rendu côté serveur et les applications web modernes.",
-    img: "/next.png",
-  },
-  {
-    name: "TypeScript",
-    level: "Débutante",
-    description:
-      "Superset de JavaScript qui ajoute un typage statique pour un développement robuste.",
-    img: "/ts.png",
-  },
-  {
-    name: "Node.js",
-    level: "Intermédiaire",
-    description:
-      "Plateforme JavaScript côté serveur pour créer des applications scalables.",
-    img: "/NODE.png",
-  },
-  {
-    name: "Tailwind CSS",
-    level: "Intermédiaire",
-    description: "Framework CSS utilitaire pour un design rapide et flexible.",
-    img: "/TAILWIND.png",
-  },
-  {
-    name: "PERN",
-    level: "Intermédiaire",
-    description:
-      "Stack de développement avec PostgreSQL, Express.js, React et Node.js.",
-    img: "/JS.png",
-  },
-  {
-    name: "Python (PyQT)",
-    level: "Intermédiaire",
-    description:
-      "Langage polyvalent avec Python utilisant le framework Qt pour le développement d'interfaces utilisateur.",
-    img: "/pyqt.jpeg",
-  },
-  {
-    name: "C#",
-    level: "Intermédiaire",
-    description:
-      "Langage orienté objet utilisé pour les applications Windows et les jeux.",
-    img: "/c.png",
-  },
-  {
-    name: "PHP",
-    level: "Intermédiaire",
-    description:
-      "Langage de script côté serveur pour le développement web dynamique.",
-    img: "/php.png",
-  },
-];
-
-const projects = [
-  // {
-  //   id: 1,
-  //   title: "My Academy",
-  //   description:
-  //     "L'application vise à permettre aux administrateurs, enseignants, parents et élèves d’accéder aux informations scolaires de manière centralisée. (En cours de réalisation)",
-  //   image: "/academy.png",
-  //   link: "/#",
-  // },
-  // {
-  //   id: 2,
-  //   title: "VetCare+",
-  //   description:
-  //     "Une plateforme dédiée à l'amélioration des soins vétérinaires en facilitant l'accès aux professionnels de santé animale. (En cours de réalisation)",
-  //   image: {
-  //     src: "/pet.png",
-  //     width: 200,
-  //     height: 200,
-  //   },
-  //   link: "/#",
-  // },
-  {
-    id: 1,
-    title: "Adventures",
-    description:
-      "Un site web conçu pour une agence de voyage fictive, offrant des expériences uniques aux aventuriers du monde entier.",
-    image: "/logo.png",
-    link: "https://our-adventures.vercel.app/",
-  },
-  // {
-  //   id: 4,
-  //   title: "Check-in App",
-  //   description:
-  //     "Solution idéale pour les salons de coiffure, cabinets médicaux, coachs et autres professionnels. Permet la prise de rendez-vous en ligne avec rappels automatiques et un suivi complet des interactions clients (En cours de réalisation)",
-  //   image: "/check-in.png",
-  //   link: "/#",
-  // },
-  {
-    id: 2,
-    title: "Site portfolio de Kleernet Infini",
-    description: "Ceci est le site web de Kleernet Infini",
-    image: "/logokI.png",
-    link: "https://kleernetinfini-project.vercel.app/fr",
-  },
-];
-
-const sections = [
-  { id: "accueil", name: "Accueil" },
-  { id: "educations", name: "Education" },
-  { id: "projets", name: "Projets" },
-  { id: "contact", name: "Contact" },
-];
+import {
+  etapesEducatives,
+  projects,
+  sections,
+  skills,
+  testimonials,
+} from "@/lib/all";
 
 function CardWrapper({ etape, index }) {
   const [ref, inView] = useInView({
@@ -258,7 +120,7 @@ function ProjectCard({ project, isVisible }) {
   );
 }
 
-const firstRow = skills.slice(0, skills.length / 1);
+const firstRow = skills?.slice(0, skills?.length / 1);
 
 const ReviewCard = ({ img, name, level, description }) => {
   return (
@@ -314,12 +176,12 @@ export default function Home() {
   useEffect(() => {
     if (inView) {
       const skillsInterval = setInterval(() => {
-        setVisibleSkills((prev) => (prev < skills.length ? prev + 1 : prev));
+        setVisibleSkills((prev) => (prev < skills?.length ? prev + 1 : prev));
       }, 300);
 
       const projectsInterval = setInterval(() => {
         setVisibleProjects((prev) =>
-          prev < projects.length ? prev + 1 : prev
+          prev < projects?.length ? prev + 1 : prev
         );
       }, 500);
 
@@ -333,7 +195,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setVisibleCards((prev) =>
-        prev < etapesEducatives.length ? prev + 1 : prev
+        prev < etapesEducatives?.length ? prev + 1 : prev
       );
     }, 1000);
 
@@ -400,7 +262,7 @@ export default function Home() {
             <span className="font-semibold text-lg">Stéphanie MAMINIAINA</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-base text-gray-600">
-            {sections.map((section) => (
+            {sections?.map((section) => (
               <button
                 key={section.id}
                 onClick={() => handleScroll(section.id)}
@@ -485,6 +347,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+
           <section id="educations" className="relative  overflow-hidden">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
@@ -500,18 +363,20 @@ export default function Home() {
               </motion.div>
 
               <AnimatePresence>
-                {etapesEducatives.slice(0, visibleCards).map((etape, index) => (
-                  <motion.div
-                    key={etape.titre}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                    className="  mb-8"
-                  >
-                    <CardWrapper etape={etape} index={index} />
-                  </motion.div>
-                ))}
+                {etapesEducatives
+                  ?.slice(0, visibleCards)
+                  .map((etape, index) => (
+                    <motion.div
+                      key={etape.titre}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -50 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      className="  mb-8"
+                    >
+                      <CardWrapper etape={etape} index={index} />
+                    </motion.div>
+                  ))}
               </AnimatePresence>
             </div>
           </section>
@@ -535,12 +400,12 @@ export default function Home() {
 
               <Marquee pauseOnHover className="[--duration:50s]">
                 {firstRow.map((skills) => (
-                  <ReviewCard key={skills.name} {...skills} />
+                  <ReviewCard key={skills?.name} {...skills} />
                 ))}
               </Marquee>
 
               <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
+                {projects?.map((project, index) => (
                   <ProjectCard
                     key={project.id}
                     project={project}
@@ -549,7 +414,7 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-20">
                 <Button
                   onClick={handleseeProject}
                   className="w-full lg:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white text-base"
@@ -557,6 +422,80 @@ export default function Home() {
                   Voir plus de projects
                 </Button>
               </div>
+            </div>
+          </section>
+
+          <section
+            id="testimonials"
+            className="w-full max-w-6xl mx-auto relative  overflow-hidden"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-16"
+            >
+              <MegaphoneIcon className="w-16 h-16 mx-auto mb-4 text-pink-500" />
+              <h2 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
+                Ce qu&apos;on dit sur moi
+              </h2>
+            </motion.div>
+
+            <div className="flex flex-col items-center justify-center gap-10 py-8 w-full max-w-4xl mx-auto">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full overflow-hidden border border-gray-100"
+                >
+                  {/* Gradient header with name */}
+                  <div className="w-full px-8 py-4 left-0 top-0 bg-gradient-to-r from-pink-500 to-purple-600 text-white">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <h3 className="font-semibold text-lg">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-sm opacity-90">
+                          {testimonial.designation}
+                        </p>
+                      </div>
+
+                      {/* Profile image */}
+                      <div className="relative w-[70px] h-[70px] rounded-full p-[3px] bg-white bg-opacity-30 backdrop-blur-sm">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                          <Image
+                            src={testimonial.image || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            height={70}
+                            width={70}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content area */}
+                  <div className="p-8 pt-6">
+                    <div className="flex gap-4">
+                      {/* Vertical accent line */}
+                      <div className="min-h-full w-1 rounded-full bg-gradient-to-b from-pink-500 to-purple-600 opacity-70"></div>
+
+                      <div className="flex-1 relative">
+                        {/* Quote icon */}
+                        <Quote className="absolute -top-1 -left-2 text-gray-200 w-8 h-8 opacity-50" />
+
+                        {/* Testimonial text */}
+                        <p className="text-gray-700 relative z-10 pl-5 italic">
+                          &quot;{testimonial.content}&quot;
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom decoration */}
+                  <div className="h-2 w-full bg-gradient-to-r from-pink-500 to-purple-600"></div>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -796,6 +735,7 @@ export default function Home() {
             &copy; Copyright {currentYear} | Conçu par{" "}
             <Link
               href="https://stephanie-maminiaina.vercel.app/"
+              a
               className="text-[#dd5bb9] hover:text-[#dd5bb9] hover:underline"
             >
               Stéphanie MAMINIAINA
