@@ -255,7 +255,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-pink-100 to-blue-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <header className="py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-pink-500 rounded-full" />
@@ -309,7 +309,7 @@ export default function Home() {
                     >
                       C&apos;est parti, discutons-en.
                     </Button>
-                    <Button
+                    {/* <Button
                       onClick={() =>
                         router.push(
                           "https://drive.google.com/file/d/1cnkBEkjk0hseAu6oQDvP6UrizgmDTUqG/view?usp=sharing"
@@ -318,7 +318,7 @@ export default function Home() {
                       className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-400 hover:from-pink-600 hover:to-purple-500 text-white text-sm sm:text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
                     >
                       Voir mon CV
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
 
@@ -384,7 +384,7 @@ export default function Home() {
           <section id="projets" className="relative  overflow-hidden">
             <div
               ref={ref}
-              className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+              className="relative max-w-7xl mx-auto px-4 sm:px-4 lg:px-4"
             >
               <motion.div
                 initial={{ opacity: 0, y: -50 }}
