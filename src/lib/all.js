@@ -23,6 +23,14 @@ const projects = [
     image: "/logokI.png",
     link: "https://kleernetinfini-project.vercel.app/fr",
   },
+  {
+    id: 4,
+    title: "Tsidika Madagascar",
+    description:
+      "Un site web pour Tsidika Madagascar(agence de voyage fictive).Vous pouvez y trouver les plus belles destinations pour vos vacances à Madagascar.",
+    image: "/Tropical.png",
+    link: "https://tsidika-madagascar.vercel.app/",
+  },
 ];
 
 const skills = [
