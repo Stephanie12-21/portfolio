@@ -31,6 +31,14 @@ const projects = [
     image: "/Tropical.png",
     link: "https://tsidika-madagascar.vercel.app/",
   },
+  {
+    id: 5,
+    title: "Revision Tools",
+    description:
+      "Un outil de révision pour les étudiants : analyse de documents, quiz et flashcards.",
+    image: "/revision-tools.jpg",
+    link: "https://revision-tools.vercel.app/",
+  },
 ];
 
 const skills = [
